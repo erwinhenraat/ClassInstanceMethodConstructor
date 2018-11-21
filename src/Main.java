@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -17,6 +21,17 @@ public class Main {
         for(Student s : students){
             s.sayHello();
         }
+
+        File file = new File("text.txt");
+        try {
+            PrintWriter pw = new PrintWriter(file);
+            pw.println("hoi ");
+            pw.flush();
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
 
         doeWatLeuks();
     }
