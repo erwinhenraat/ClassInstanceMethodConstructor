@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Airplane {
     private String myFlightCode;
     private int myPassengers;
@@ -18,5 +20,12 @@ public class Airplane {
         System.out.println("flight "+ myFlightCode+" went down. " + myPassengers + " people died!");
         alive = false;
 
+    }
+    public boolean checkForDanger(){
+        int r = new Random().nextInt(5);
+        System.out.println(r);
+        if(r < 2)return true;
+
+        return false;
     }
 }

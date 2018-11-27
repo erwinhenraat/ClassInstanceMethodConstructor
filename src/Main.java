@@ -3,15 +3,22 @@ public class Main{
         //instance aanmaken van Airplane class
         //dat is dus ap1
         //dit noem je ook wel instantieren
-        Airplane ap1 = new Airplane(122, "mh18");
-        Airplane ap2 = new Airplane(254, "zs25");
+        Airplane[] airplanes = {
+                new Airplane(300, "AX33"),
+                new Airplane(277,"BG32"),
+                new Airplane(227,"GG55"),
+                new Airplane(188,"FD14"),
+                new Airplane(22,"FX34")
+        };
 
         //aanroepen van de fly methode van de Airplane class
-        ap1.fly();
-        ap2.fly();
-        ap1.crash();
-        ap1.fly();
-        ap2.fly();
+
+        for (Airplane a: airplanes) {
+            a.fly();
+            if(a.checkForDanger()){
+                a.crash();
+            }
+        }
     }
 
 }
