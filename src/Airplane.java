@@ -3,10 +3,12 @@ import java.util.Random;
 public class Airplane {
     private String myFlightCode;
     private int myPassengers;
-    public Airplane(int passengers, String flightCode){
+    private int myCrashChance;
+    public Airplane(int passengers, String flightCode, int crashChance){
         //constructor
         myFlightCode = flightCode;
         myPassengers = passengers;
+        myCrashChance = crashChance;
 
     }
     private boolean alive = true;
@@ -22,9 +24,9 @@ public class Airplane {
 
     }
     public boolean checkForDanger(){
-        int r = new Random().nextInt(5);
+        int r = new Random().nextInt(100);
         System.out.println(r);
-        if(r < 2)return true;
+        if(r < myCrashChance)return true;
 
         return false;
     }
